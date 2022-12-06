@@ -1,0 +1,815 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+@font-face {
+    font-family: 'pingwing';
+    src: url(fonts/pingwing.eot),
+         url(fonts/pingwing.ttf);
+    src: url(fonts/pingwing.eot?#iefix) format('embedded-opentype'),
+         url(fonts/pingwing.svg#pingwing) format('svg'),
+         url(fonts/pingwing.woff) format('woff'),
+         url(fonts/pingwing.woff2) format('woff2');
+  }
+
+  @font-face {
+    font-family: 'Jost-Bold';
+    src: url(fonts/Jost-Bold.eot),
+         url(fonts/Jost-Bold.ttf);
+    src: url(fonts/Jost-Bold.eot?#iefix) format('embedded-opentype'),
+         url(fonts/Jost-Bold.svg#Jost-Bold) format('svg'),
+         url(fonts/Jost-Bold.woff) format('woff'),
+         url(fonts/Jost-Bold.woff2) format('woff2');
+  }
+
+nav.navig{
+    display: flex;
+    justify-content: space-between;
+    height: 12vh;
+    width: 100%;
+    position: fixed;
+    z-index: 5;
+    background-color: rgba(127,255,212,0);
+    animation-duration: 0.8s;
+    animation-name: scrollback;
+}
+
+nav.navig img{
+    align-self: center;
+    width: 300px;
+    height: 60px;
+    margin-left: 5%;
+}
+
+nav.navig ul{
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+    font-size: 17px;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    letter-spacing: 0.1em;
+    margin-top: 0px;
+    text-transform: uppercase;
+}
+
+nav ul li a{
+   align-self: center;
+   margin-right: 15px;
+   margin-top: 0;
+   padding-right: 10px;
+   text-decoration: none;
+   color: black;
+}
+
+.checkbtn{
+    display: none;
+    font-size: 40px;
+    color:white;
+    margin-right: 10%;
+    cursor: pointer;
+}
+
+#check{
+    display: none;
+}
+
+nav.sticky{
+    background-color: aquamarine;
+    height: 8vh;
+    animation-duration: 0.8s;
+    animation-name: navigation;
+}
+
+@keyframes navigation{
+    from{
+       background-color: rgba(127,255,212,0);
+       height: 12vh;
+    }
+    to{
+        background-color: rgba(127,255,212);
+        height: 8vh;
+    }   
+}
+
+@keyframes scrollback{
+    from{
+        height: 8vh;
+    }
+    to{
+       background-color:  rgba(127,255,212,0);
+       height: 12vh;
+    }
+}
+
+@media (max-width: 960px){
+    
+    nav.navig{
+        z-index: 10;
+    }
+    
+    nav.navig img{
+        align-self: center;
+        width: 250px;
+        height: 48px;
+        margin-left: 0;
+    }
+    
+    .checkbtn{
+        display: flex;
+        align-items: center;
+    }
+
+    nav.navig ul{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background: rgba(3, 255, 3, 0.7) ;
+        position: fixed;
+        width: 100%;
+        right: -100%;
+        height: 100vh;
+        z-index: -1;
+        transition: all .5s;
+    }
+    
+    nav.navig ul li{
+        margin-top: 80px;
+    }
+
+    nav.navig ul li a{
+        font-size: larger;
+    }
+    
+    #check:checked ~ .hidden{
+        right: 0;
+    }
+}
+
+nav a:hover{
+    color: blue;
+    transition: 0.8s;
+}
+
+nav a:active{
+    color: greenyellow;
+}
+
+div.headers{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width:100%;
+    height: 110vh;
+    background-color: aqua;
+    background-attachment: fixed;
+}
+   
+hgroup.page_center{       
+  font-family: pingwing, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  letter-spacing: 0.2em;
+  word-spacing: 0.1em;
+  font-size: 2rem;
+  animation-name: landpart;
+  animation-duration: 0.8s;
+  z-index: 1;
+}
+
+hgroup.page_center h1.main_title{
+  margin: 0% auto;
+}
+
+@keyframes landpart{
+    from{
+        font-size: 1.8rem;
+        opacity: 0;
+    }
+    to{
+        font-size: 2rem;
+        opacity: 1;
+    }
+}
+
+@media (max-width: 576px){   
+    @keyframes landpart{
+        from{
+            font-size: 1.2rem;
+            opacity: 0;
+        }
+        to{
+           font-size: 1.4rem;
+           opacity: 1;
+        }
+    }
+    hgroup.page_center{  
+        font-size: 1.4rem;
+    }
+}
+
+div.story{
+    display: flex;
+    width: 100%;
+    background-color: pink;
+}
+
+div.cyanbun{
+    width: 30%;
+    align-self: flex-end;
+}
+
+img.cyanbunimg{
+    width: 130%;
+    height: 130%;
+    margin-bottom: 0;
+    padding-top: 100px;
+}
+
+article.whatare{
+    width: 60%;
+    justify-content: center;
+    text-align: start;
+    padding-left: 3em;
+    padding: 200px 0 100px;
+}
+
+article.whatare h1.title{
+    font-family: pingwing, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    letter-spacing: 0.2em;
+    font-size: 3rem;
+    padding: 0% 10% 0%;
+}
+
+article.whatare p.description{
+    font-family: Jost-Bold ,Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    padding: 0% 10% 0%;  
+}
+
+@media (max-width: 576px){
+    
+    div.story{
+        display: block;
+    }
+    
+    div.cyanbun{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+    }
+    
+    img.cyanbunimg{
+        width: 280px;
+        height: 300px;
+        padding: 20px 0px 0px 0px;
+    }
+    
+    article.whatare{
+        width: 100%;
+        text-align: center;
+        padding-left: 0;
+        padding: 20px 0px 40px 0px;
+    }
+    
+    article.whatare h1.title{
+        padding-top: 1.5em;
+        font-family: pingwing, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        letter-spacing: 0.1em;
+        font-size: 2rem;
+    }
+    
+    article.whatare p.description{
+        font-family: Jost-Bold, Arial, Helvetica, sans-serif;
+        font-weight: bolder;
+        font-size: 1.1rem;
+        line-height: 1.8;
+          
+    }
+}
+
+div.storyy{
+    display: flex;
+    width: 100%;
+    background-color: blanchedalmond;
+}
+
+div.brownbun{
+    width: 40%;
+    align-self: flex-end;
+}
+
+img.brownbunimg{
+    width: 100%;
+    height: 100%;
+    margin-bottom: 0;
+    padding-top: 100px;
+}
+
+article.ourstory{
+    width: 60%;
+    justify-content: end;
+    text-align: start;
+    padding: 200px 0px 100px;
+}
+
+article.ourstory h1.ourtitle{
+    font-family: pingwing, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 3rem;
+    letter-spacing: 0.2em;
+    padding: 0% 10% 0%;
+}
+
+article.ourstory p.ourdescription{
+    font-family: Jost-Bold, Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    padding: 0% 10% 0%;
+}
+
+@media (max-width: 576px){
+    
+    div.storyy{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    
+    div.brownbun{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+    }
+    
+    img.brownbunimg{
+        width: 280px;
+        height: 300px;
+        padding: 20px 0px 0px 0px;
+    }
+    
+    article.ourstory{
+        width: 100%;
+        text-align: center;
+        padding-left: 0;
+        padding: 20px 0px 40px 0px;
+    }
+    
+    article.ourstory h1.ourtitle{
+        padding-top: 1.5em;
+        font-family: pingwing, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        letter-spacing: 0.1em;
+        font-size: 2rem;
+    }
+    
+    article.ourstory p.ourdescription{
+        font-family: Jost-Bold, Arial, Helvetica, sans-serif;
+        font-weight: bolder;
+        font-size: 1.1rem;
+        line-height: 1.8;
+          
+    }
+}
+
+div.roadmap{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: thistle;
+}
+
+article.roadpart{
+    background-color: tomato;
+    text-align: center;
+}
+
+article.roadpart h1.roadtitle{
+    padding: 100px 0px 100px;
+    font-family: pingwing, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 3.5rem;
+    letter-spacing: 0.2em;
+}
+
+#checkfor10{
+    display: none;
+}
+
+#checkfor20{
+    display: none;
+}
+
+#checkfor40{
+    display: none;
+}
+
+#checkfor60{
+    display: none;
+}
+
+#checkfor70{
+    display: none;
+}
+
+#checkfor80{
+    display: none;
+}
+
+#checkfor100{
+    display: none;
+}
+
+#checkfor110{
+    display: none;
+}
+
+div.roaddescription h1{
+    font-size: 3rem;
+    user-select: none;
+    padding: 2% 0%;
+    font-family: pingwing, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+div.roaddescription span.click:hover{
+    cursor: pointer;
+    background-position: left;
+}
+
+div.roaddescription span.click10:hover{
+    cursor: pointer;
+    background-position: left;
+}
+
+div.roaddescription span.click11:hover{
+    cursor: pointer;
+    background-position: left;
+}
+
+div.roaddescription span.click{
+    border: 3px white solid;
+    border-radius: 6px;
+    padding: 0.3em 2em;
+    background-image: linear-gradient(to bottom right, cyan, rgb(214, 65, 255));
+    transition: 300ms background-position ease-in-out;
+    background-position: right;
+    background-size: 300%;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+div.roaddescription span.click10{
+    border: 3px white solid;
+    border-radius: 6px;
+    padding: 0.3em 1.8em;
+    background-image: linear-gradient(to bottom right, cyan, rgb(214, 65, 255));
+    transition: 300ms background-position ease-in-out;
+    background-position: right;
+    background-size: 300%;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+div.roaddescription span.click11{
+    border: 3px white solid;
+    border-radius: 6px;
+    padding: 0.3em 1.9em;
+    background-image: linear-gradient(to bottom right, cyan, rgb(214, 65, 255));
+    transition: 300ms background-position ease-in-out;
+    background-position: right;
+    background-size: 300%;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+div.roaddescription p{
+    font-family: Jost-Bold, Arial, Helvetica, sans-serif;
+    font-size: 1.4rem;
+    padding: 1rem 0rem;
+}
+
+@media (max-width: 860px){ 
+    
+    article.roadpart h1.roadtitle{
+        font-size: 2.5rem;
+    }
+    
+    div.roaddescription h1{
+        font-size: 2.5rem;
+    }
+    
+    div.roaddescription p{
+        font-size: 0.5rem;
+        padding: 1em 0em;
+    }
+
+    div.roaddescription p.pten{
+        opacity: 0;
+        transition: 0.4s;
+        font-size: 0.5rem;
+    }
+    
+    div.roaddescription p.ptwenty{
+        opacity: 0;
+        transition: 0.4s;
+        font-size: 0.5rem;
+    }
+    
+    div.roaddescription p.pforty{
+        opacity: 0;
+        transition: 0.4s;
+        font-size: 0.5rem;
+    }
+    
+    div.roaddescription p.psixty{
+        opacity: 0;
+        transition: 0.4s;
+        font-size: 0.5rem;
+    }
+    
+    div.roaddescription p.pseventy{
+        opacity: 0;
+        transition: 0.4s;
+        font-size: 0.5rem;
+    }
+    
+    div.roaddescription p.peighty{
+        opacity: 0;
+        transition: 0.4s;
+        font-size: 0.5rem;
+    }
+    
+    div.roaddescription p.phundred{
+        opacity: 0;
+        transition: 0.4s;
+        font-size: 0.5rem;
+    }
+    
+    div.roaddescription p.phundredten{
+        opacity: 0;
+        transition: 0.4s;
+        font-size: 0.5rem;
+    }
+}
+
+div.roaddescription p.pten{
+    opacity: 0;
+    transition: 0.4s;
+}
+
+div.roaddescription p.ptwenty{
+    opacity: 0;
+    transition: 0.4s;
+}
+
+div.roaddescription p.pforty{
+    opacity: 0;
+    transition: 0.4s;
+}
+
+div.roaddescription p.psixty{
+    opacity: 0;
+    transition: 0.4s;
+}
+
+div.roaddescription p.pseventy{
+    opacity: 0;
+    transition: 0.4s;
+}
+
+div.roaddescription p.peighty{
+    opacity: 0;
+    transition: 0.4s;
+}
+
+div.roaddescription p.phundred{
+    opacity: 0;
+    transition: 0.4s;
+}
+
+div.roaddescription p.phundredten{
+    opacity: 0;
+    transition: 0.4s;
+    margin-bottom: 100px;
+}
+
+div.FAQ{
+    width: 100%;
+    background-color:skyblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+div.FAQTITLE{
+    font-size: 2rem;
+    text-align: center;
+    padding-top: 4rem;
+    padding-bottom: 6rem;
+    font-family: pingwing, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+a.quest1{
+    text-decoration: none;
+    font-family: pingwing, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: black;
+    font-size: 2rem;
+}
+
+a.quest2{
+    text-decoration: none;
+    font-family: pingwing, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: black;
+    font-size: 2rem;
+}
+
+a.quest3{
+    text-decoration: none;
+    font-family: pingwing, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: black;
+    font-size: 2rem;
+}
+
+a.quest4{
+    text-decoration: none;
+    font-family: pingwing, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: black;
+    font-size: 2rem;
+}
+
+a.quest5{
+    text-decoration: none;
+    font-family: pingwing, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: black;
+    font-size: 2rem;
+}
+
+div.ans1{
+    font-family: Jost-Bold, Arial, Helvetica, sans-serif;
+    font-size: 1.1rem;
+}
+
+div.ans2{
+    font-family: Jost-Bold, Arial, Helvetica, sans-serif;
+    font-size: 1.1rem;
+}
+
+div.ans3{
+    font-family: Jost-Bold, Arial, Helvetica, sans-serif;
+    font-size: 1.1rem;
+}
+
+div.ans4{
+    font-family: Jost-Bold, Arial, Helvetica, sans-serif;
+    font-size: 1.1rem;
+}
+
+div.ans5{
+    font-family: Jost-Bold, Arial, Helvetica, sans-serif;
+    font-size: 1.1rem;
+}
+
+div.FAQ div[class^="question"]{
+    background-color: coral;
+    width: 60%;
+    margin: 0px auto;
+    margin-bottom: 1em;
+    border-radius: 4px;
+    box-shadow: .4rem 3px .5px rgba(0,0,0,0.1);
+}
+
+div.FAQ div.question5{
+    margin-bottom: 6em;
+}
+
+div.FAQ a[class^="quest"]{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    user-select: none;
+    padding: 0.5em 0em 0.5em 0.4em;
+}
+
+div.FAQ i{
+    color:white;
+    font-size: 1.5rem;
+    padding-right: 1em;
+}
+
+div.FAQ i.md-sub{
+    display: none;
+}
+
+div.FAQ div[class^="ans"]{
+    height: 0;
+    position: relative;
+    background-color:royalblue;
+    overflow: hidden;
+}
+
+div[class^="question"]:target div[class^="ans"]{
+    height:100%;
+    padding: 0.6em;
+}
+
+@media (max-width: 830px){
+    
+    div.FAQTITLE{
+        font-size: 1.6rem;
+        text-align: center;
+        padding-top: 4rem;
+        padding-bottom: 6rem;
+        font-family: pingwing, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }    
+    
+    div.FAQ div[class^="question"]{
+        background-color: coral;
+        width: 90%;
+        margin: 0px auto;
+        margin-bottom: 1em;
+        border-radius: 4px;
+        box-shadow: .4rem 3px .5px rgba(0,0,0,0.1);
+    }
+    
+    a.quest1{
+        text-decoration: none;
+        font-family: pingwing, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        color: black;
+        font-size: 1.4rem;
+    }
+    
+    a.quest2{
+        text-decoration: none;
+        font-family: pingwing, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        color: black;
+        font-size: 1.4rem;
+    }
+    
+    a.quest3{
+        text-decoration: none;
+        font-family: pingwing, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        color: black;
+        font-size: 1.4rem;
+    }
+    
+    a.quest4{
+        text-decoration: none;
+        font-family: pingwing, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        color: black;
+        font-size: 1.4rem;
+    }
+
+    a.quest5{
+        text-decoration: none;
+        font-family: pingwing, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        color: black;
+        font-size: 1.4rem;
+    }
+
+    div.FAQ i{
+        color:white;
+        font-size: 1.2rem;
+        padding-right: 1em;
+    }
+
+    div.ans1{
+        font-family: Jost-Bold, Arial, Helvetica, sans-serif;
+        font-size: 1.1rem;
+    }
+    
+    div.ans2{
+        font-family: Jost-Bold, Arial, Helvetica, sans-serif;
+        font-size: 1.1rem;
+    }
+    
+    div.ans3{
+        font-family: Jost-Bold, Arial, Helvetica, sans-serif;
+        font-size: 1.1rem;
+    }
+    
+    div.ans4{
+        font-family: Jost-Bold, Arial, Helvetica, sans-serif;
+        font-size: 1.1rem;
+    }
+
+    div.ans5{
+        font-family: Jost-Bold, Arial, Helvetica, sans-serif;
+        font-size: 1.1rem;
+    }
+
+    div.FAQ div.question5{
+        margin-bottom: 6em;
+    }
+}
+
+
+
+
+
+
+
+
+
+ 
+ 
